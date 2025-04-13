@@ -1,0 +1,36 @@
+.email-row {
+    display: flex;
+    justify-content: space-between;
+
+    padding-block: 12px;
+    padding-inline: 16px;
+
+    background-color: antiquewhite;
+    border-radius: 16px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.email-row:hover {
+    background-color: rgb(230, 211, 187);
+}
+
+.email-row .email-type {
+    margin-inline-end: 12px;
+    border-inline-end: 2px solid black;
+    padding-inline-end: 12px;
+    color: rgb(108, 110, 81);
+}
+
+.email-row .email-title {
+    margin-inline-end: auto;
+    font-weight: 700;
+}
+
+.email-row .email-created-at {
+    color: brown;
+    font-size: 0.9em;
+}
