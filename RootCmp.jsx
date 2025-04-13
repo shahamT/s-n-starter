@@ -4,6 +4,7 @@
 // const { useState } = React
 
 import { EmailsList } from "./cmps/EmailsList.jsx";
+import { EmailView } from "./cmps/EmailsView.jsx";
 
 // childrens compomnents
 
@@ -23,6 +24,7 @@ export function RootCmp() {
         <main>
 
             { <EmailsList /> }
+            { <EmailView/>}
 
         </main>
 

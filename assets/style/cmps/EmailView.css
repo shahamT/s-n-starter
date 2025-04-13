@@ -1,0 +1,32 @@
+.email-container {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    padding: 24px;
+    margin-inline: 32px;
+
+    border-radius: 16px;
+    background-color: antiquewhite;
+}
+
+.email-container .close-email-btn {
+    position: absolute;
+    inset: 8px 8px auto auto;
+}
+
+.email-container .email-type {
+    color: rgb(108, 110, 81);
+}
+.email-container .email-title {
+
+}
+.email-container .email-content {
+height: 300px;
+width: 100%;
+}
+.email-container .email-send-btn {
+align-self: end;
+}
