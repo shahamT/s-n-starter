@@ -1,24 +1,30 @@
-const { useState } = React
 
-// import { } from ''
 
+//react fncs
+// const { useState } = React
+
+import { EmailsList } from "./cmps/EmailsList.jsx";
+
+// childrens compomnents
+
+//component
 export function RootCmp() {
     // const [ route, setRoute ] = useState('page1')
-   
-   
-   return <section className="app">
-       
+
+
+    return <section className="app">
+
         <header>
 
-            <h1>My App</h1>
+            <h1>Email</h1>
 
         </header>
 
         <main>
 
-        {/* {route === 'page1' && <Page1 />} */}
+            { <EmailsList /> }
 
         </main>
-        
+
     </section>
 }
