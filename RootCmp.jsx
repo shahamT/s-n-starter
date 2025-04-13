@@ -1,30 +1,47 @@
-
-
 //react fncs
-// const { useState } = React
+const { useState, useEffect } = React
 
-import { EmailsList } from "./cmps/EmailsList.jsx";
-import { EmailView } from "./cmps/EmailsView.jsx";
+// services
+import { emailService } from "./services/email.service.js";
 
 // childrens compomnents
+import { EmailsList } from "./cmps/EmailsList.jsx";
+import { EmailView } from "./cmps/EmailsView.jsx";
+import { MainHeader } from "./cmps/MainHeader.jsx";
 
 //component
 export function RootCmp() {
-    // const [ route, setRoute ] = useState('page1')
+    // states & refs
+    const [route, setRoute] = useState('EmailsList')
+
+    // effectes
+    useEffect(() => {
+    }, [route])
+
+
+
+
+    // functions
+    function onNewEmail() {
+        setRoute('EmailView')
+    }
+
+    function handleNewEmail(email) {
+        emailService.post(email)
+            .then(() => {
+                setRoute('EmailsList')
+            })
+    }
 
 
     return <section className="app">
 
-        <header>
-
-            <h1>Email</h1>
-
-        </header>
+        {<MainHeader onNewEmail={onNewEmail} />}
 
         <main>
 
-            { <EmailsList /> }
-            { <EmailView/>}
+            {route === 'EmailsList' && <EmailsList />}
+            {route === 'EmailView' && <EmailView handleNewEmail={handleNewEmail} />}
 
         </main>
 

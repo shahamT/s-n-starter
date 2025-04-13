@@ -1,8 +1,8 @@
 
 import { storageService } from './async-storage.service.js'
 import { utilService } from './util.service.js'
-export const emailService = {
 
+export const emailService = {
     query,
     remove,
     getById,
@@ -49,8 +49,7 @@ function put(email) {
 }
 
 function post(email) {
-    storageService.post(DB_EMAILS_KEY, email)
-        .then(() => storageService.query(DB_EMAILS_KEY))
+    return storageService.post(DB_EMAILS_KEY, email)
 
 
 }
@@ -66,21 +65,21 @@ function _createDemoEmails() {
             type: 'inbox',
             title: 'first cheack',
             content: '',
-            createAt: Date.now(),
+            createdAt: Date.now(),
         },
         {
             id: utilService.makeId(4),
             type: 'sent',
             title: 'Welcom',
             content: '',
-            createAt: Date.now(),
+            createdAt: Date.now(),
         },
         {
             id: utilService.makeId(4),
             type: 'inbox',
             title: 'password',
             content: '',
-            createAt: Date.now(),
+            createdAt: Date.now(),
         },
     ]
 
